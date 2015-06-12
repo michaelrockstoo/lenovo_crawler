@@ -1,3 +1,4 @@
+#Some changes with python3
 import logging
 import urllib
 import urllib.request
@@ -7,7 +8,6 @@ import socket
 import time
 import sched
 import webbrowser
-
 import re
 
 ########################################################################
@@ -60,46 +60,34 @@ def filter_item(content):
   item_num = len(key_words)
 
   if item_num != 0:
-    #print 'Idealpad Y510'
-    #dump_file('Y510p', content)
     ret = 0b000001
 
   key_words = re.findall('T450s', content, re.S);
   item_num = len(key_words)
 
   if item_num != 0:
-    #print 'ThinkPad T540'
-    #dump_file('T540', content);
     ret = 0b000010
 
   key_words = re.findall('Y50', content, re.S);
   item_num = len(key_words)
 
   if item_num != 0:
-    #print 'Idealpad Y50'
-    #dump_file('Y50', content)
     ret = 0b000100
 
   key_words = re.findall('T540s', content, re.S);
   item_num = len(key_words)
   if item_num != 0:
-    #print 'ThinkPad T440p'
-    #dump_file('T440', content)
     ret = 0b001000
 
   key_words = re.findall('ThinkPad W5', content, re.S);
   item_num = len(key_words)
   if item_num != 0:
-    #print 'ThinkPad W540'
-    #dump_file('W540', content)
     ret = 0b010000
 
   key_words = re.findall('P400', content, re.S);
   item_num = len(key_words)
 
   if item_num != 0:
-    #print 'Lenovo P400'
-    #dump_file('P400', content)
     ret = 0b100000
 
   return ret;
@@ -238,8 +226,8 @@ def event_func(msg):
       print ("Item Found!")
 
       if indicator & 0b000001:
-        print ("X1 Carbon 2 Found in Lenovo Outlet!")
-        log_write('X1 Carbon 2 Found in Lenovo Outlet')
+        print ("X1 Carbon 3 Found in Lenovo Outlet!")
+        log_write('X1 Carbon 3 Found in Lenovo Outlet')
       if indicator & 0b000010:
         print ("T450s Found in Lenovo Outlet!")
         log_write('T450s Found in Lenovo Outlet')
@@ -247,8 +235,8 @@ def event_func(msg):
         print ("Y50 Found in Lenovo Outlet!")
         log_write('Y50 Found in Lenovo Outlet')
       if indicator & 0b001000:
-        print ("T540p Found in Lenovo Outlet!")
-        log_write('T540p Found in Lenovo Outlet')
+        print ("T540s Found in Lenovo Outlet!")
+        log_write('T540s Found in Lenovo Outlet')
       if indicator & 0b010000:
         print ("W540 Found in Lenovo Outlet!")
         log_write('W5X0 Found in Lenovo Outlet')
